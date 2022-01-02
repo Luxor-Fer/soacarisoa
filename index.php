@@ -4,13 +4,13 @@ if (isset($_POST['envio'])){
     include "models/servicioLogin.php";
     if ( $result != null ){
         session_start();
-        $bjt = json_decode($result);
-        echo $result['NOM_SUC'];
-        $_SESSION['nomUsu'] = $result[1];
-        $_SESSION['conUsu'] = $result[0];
-        $_SESSION['dirUsu'] = $result[2];
-        $_SESSION['telUsu'] = $result[3];
-        #header('Location: '."redireccion.php");
+        #$bjt = json_decode($resultJSON);
+        #echo $obj;
+        $_SESSION['usuario'] = $result;
+        #$_SESSION['conUsu'] = $result[0];
+        #$_SESSION['dirUsu'] = $result[2];
+        #$_SESSION['telUsu'] = $result[3];
+        header('Location: '."redireccion.php");
     }
 }
 ?>
