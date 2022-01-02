@@ -18,28 +18,28 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php?action=home">Home</a>
+          <a class="nav-link active" aria-current="page" href="redireccion.php?action=home">Home</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Cliente
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="index.php?action=listar">Listar Clientes</a></li>
-            <li><a class="dropdown-item" href="#">Añadir Cliente</a></li>
-            <li><a class="dropdown-item" href="#">Editar Cliente</a></li>
-            <li><a class="dropdown-item" href="#">Eliminar Cliente</a></li>
+            <li><a class="dropdown-item" href="redireccion.php?action=listar">Listar Clientes</a></li>
+            <li><a class="dropdown-item" href="redireccion.php?action=añadircliente">Añadir Cliente</a></li>
+            <li><a class="dropdown-item" href="redireccion.php?action=editarcliente">Editar Cliente</a></li>
+            <li><a class="dropdown-item" href="redireccion.php?action=eliminarcliente">Eliminar Cliente</a></li>
           </ul>
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle active" href="redireccion.php?action=" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
            Pedidos
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="index.php?action=añadirP">Añadir Pedido</a></li>
-            <li><a class="dropdown-item" href="#">Editar Pedido</a></li>
-            <li><a class="dropdown-item" href="#">Eliminar Pedido</a></li>
+            <li><a class="dropdown-item" href="redireccion.php?action=añadirP">Añadir Pedido</a></li>
+            <li><a class="dropdown-item" href="redireccion.php?action=editarpedido">Editar Pedido</a></li>
+            <li><a class="dropdown-item" href="redireccion.php?action=eliminarpedido">Eliminar Pedido</a></li>
           </ul>
         </li>
       </ul>
@@ -61,8 +61,5 @@
   var boton = document.getElementById("btnLogout");
   boton.onclick = function (){
     window.location="index.php";
-    <?php
-    session_destroy();
-    ?>
   }
 </script>

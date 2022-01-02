@@ -14,7 +14,7 @@ $sql= $tipo=="sucursal" ? "SELECT * FROM sucursal WHERE NOM_SUC= '$username' AND
 
 
 $respuesta = $conn -> query ($sql);
-    $result = array();
+    $result = array ();
 
     if ( $respuesta -> num_rows > 0 ){
             while ( $fila = $respuesta-> fetch_assoc()){
@@ -25,7 +25,5 @@ $respuesta = $conn -> query ($sql);
 }
 $resultJSON = json_encode($result);
 echo json_encode($result);
-
-
 
 ?>

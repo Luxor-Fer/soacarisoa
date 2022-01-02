@@ -62,9 +62,6 @@
   var boton = document.getElementById("btnLogout");
   boton.onclick = function (){
     window.location="index.php";
-    <?php
-    session_destroy();
-    ?>
   }
 </script>
 <section>
