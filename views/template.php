@@ -14,7 +14,7 @@
 <div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"> <img class="avatar" src="img/jf.jpg" alt="jf"> </a>
+    <a class="navbar-brand" href="redireccion.php?action=home"> <img class="avatar" src="img/jf.jpg" alt="jf"> </a>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -59,7 +59,7 @@
 </html>
 <footer class="bg-primary" style=text-align:center>
 <p ><b>Copyright © 2022 | Carisoa </b> </p>
-
+</footer>
 <script>
   var boton = document.getElementById("btnLogout");
   boton.onclick = function (){
