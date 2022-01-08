@@ -14,6 +14,7 @@
     <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 
     <title>Equipo Alfa Buena Maravilla Onda Dinamita Escuadron Lobo </title>
+
 </head>
 <body>
 <div>
