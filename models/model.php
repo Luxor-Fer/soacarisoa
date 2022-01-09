@@ -9,6 +9,7 @@ class EnlacesPaginas {
             $enlacesModel == "editarpedido" ||
             $enlacesModel == "datos" ||
             $enlacesModel == "pedidoPlantaEspe" ||
+            $enlacesModel == "enviarPedido" ||
             $enlacesModel == "eliminarpedido")
             {
                 $module = "views/modules/".$enlacesModel.".php";

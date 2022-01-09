@@ -42,69 +42,69 @@
     ?>
 </tbody>
 </table>
-<input type="button" value="Mostrar pedidos" onclick="mostrarPedido()">
-</div>
-<div id="tablaCrear">
 
 </div>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Codigo de Articulo</th>
+      <th scope="col">Nombre del Articulo</th>
+      <th scope="col">Cantidad de Articulo</th>
+    </tr>
+  </thead>
+  <tbody id="tabla">
+    
+  </tbody>
+</table>
+<button type="button" onclick="enviarDatos()" value="EnviarPedido">Enviar Pedido</button>
+
+
 <script>
     let pedidos=[];
     function agregarCarrito (codArti,i){
-        pedidos.push([codArti,i,document.getElementById(codArti).value]);
+        pedidos.push([codArti,document.getElementById(codArti).value]);
         //alert(pedidos[0]);
-    }
-    function mostrarPedido(){
-        let tabla = document.createElement('table');
-        let thead = document.createElement('thead');
-        let tbody = document.createElement('tbody');
-
-        tabla.appendChild(thead);
-        tabla.appendChild(tbody);
-        tabla.style.borderCollapse = "collapse";
-        tabla.style.borderSpacing = "0";
-
-        thead.style.padding = "10px 20px";
-        thead.style.border = "1px solid"
-        tbody.style.padding = "10px 20px";
-        tbody.style.border = "1px solid"
-        
-
-        document.getElementById('tablaCrear').appendChild(tabla);
-
-        let row_1 = document.createElement('tr');
-        let heading_1 = document.createElement('th');
-        heading_1.innerHTML = "Codigo Producto";
-        
-        let heading_2 = document.createElement('th');
-        heading_2.innerHTML = "Nombre Producto";
-        
-        row_1.appendChild(heading_1);
-        row_1.appendChild(heading_2);
-        thead.appendChild(row_1);
 
         let row_2 = document.createElement('tr');
         let row_2_data_1 = document.createElement('td');
-        row_2_data_1.innerHTML = "primer codigo";
+        row_2_data_1.innerHTML = codArti;
         let row_2_data_2 = document.createElement('td');
-        row_2_data_2.innerHTML = "primer nombre";
-        
+        row_2_data_2.innerHTML = i;
+        let row_2_data_3 = document.createElement('td');
+        row_2_data_3.innerHTML = document.getElementById(codArti).value;
         row_2.appendChild(row_2_data_1);
         row_2.appendChild(row_2_data_2);
-        tbody.appendChild(row_2);
+        row_2.appendChild(row_2_data_3);
+        document.getElementById("tabla").appendChild(row_2);
+    }
+    function enviarDatos(){
+        let url ="redireccion.php?action=enviarPedido";
+        var envios = {"pedidos": pedidos};
         
-        let row_3 = document.createElement('tr');
-        let row_3_data_1 = document.createElement('td');
-        row_3_data_1.innerHTML = "segundo codigo";
-        let row_3_data_2 = document.createElement('td');
-        row_3_data_2.innerHTML = "segundo nombre";
+  
+        envio(envios,url);
+        
+    }
+    function envio(dato , direccion){
+            $.ajax({
+                data: dato,
+                url: direccion,
+                type: "post",
+                success: function(response){
+                
 
-        row_3.appendChild(row_3_data_1);
-        row_3.appendChild(row_3_data_2);
-        tbody.appendChild(row_3);
-
-        pedidos.forEach(function(elemento, indice, array) {
-        console.log(elemento, indice);
-        })
-
+                     $.post('redireccion.php?action=enviarPedido', {
+              "dacom": dato,
+              
+            },function(data) {
+                window.location.href = "redireccion.php?action=enviarPedido";
+          });
+                },
+                error: function (error){
+                    console.log(error);
+                }
+            });
     }
 </script>
