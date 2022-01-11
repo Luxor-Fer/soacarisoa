@@ -16,10 +16,6 @@
 <div class="estiloHome" style="padding-left: 35%; padding-right: 35%; padding-top: 25px;">
 <form class="row g-3" id="formulario" method="POST" action="redireccion.php?action=añadirArticulo">
   <div class="col-12">
-    <label for="inputCodigo" class="form-label">Código Articulo: </label>
-    <input style="width: 450px;" type="text" class="form-control" id="inputCodigo" name="COD_ART" >
-  </div>
-  <div class="col-12">
     <label for="inputNombre" class="form-label">Nombre: </label>
     <input style="width: 450px;" type="text" class="form-control" id="inputNombre" name="NOM_ART" requiered >
   </div>

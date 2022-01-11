@@ -43,8 +43,7 @@
 <div class="estiloHome" style="padding-left: 35%; padding-right: 35%; padding-top: 10px;">
 <form class="row g-3" id="formulario" method="POST" action="redireccion.php?action=editarArticulo">
 <div class="col-12">
-    <label for="inputCodigo" class="form-label">Código Articulo: </label>
-    <input style="width: 450px;" type="text" class="form-control" id="COD_ART_PER" name="COD_ART_PER" >
+    <input style="width: 450px;" hidden type="text" class="form-control" id="COD_ART_PER" name="COD_ART_PER" >
   </div>
   <div class="col-12">
     <label for="inputNombre" class="form-label">Nombre: </label>

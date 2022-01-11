@@ -6,7 +6,7 @@ header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 
 include 'conexion.php';
 
-$codigo = $_POST['COD_ART'];
+
 $nombre = $_POST['NOM_ART'];
 $color = $_POST['COL_ART'];
 $peso = $_POST['PES_ART'];
@@ -15,12 +15,14 @@ $cantidad = $_POST['CANTIDAD'];
 $nivelR= $_POST['NIV_RIE'];
 $planta = $_POST['COD_PLA_PER'];
 
-$sqlinsertarArt = "INSERT INTO articulo (COD_ART,NOM_ART,COL_ART,PES_ART,CAP_ART)VALUES('$codigo','$nombre','$color','$peso','$capacidad')";
+$sqlinsertarArt = "INSERT INTO articulo (NOM_ART,COL_ART,PES_ART,CAP_ART)VALUES('$nombre','$color','$peso','$capacidad')";
 
 if ($mysqli -> query($sqlinsertarArt)===TRUE){
     echo json_encode ("ok se guardo correctamene");
 
-    $sqlinsertar = "INSERT INTO articuloplanta (CANTIDAD,NIV_RIE,COD_ART_PER,COD_PLA_PER)VALUES('$cantidad','$nivelR','$codigo','$planta')";
+    #$sqlArticuloIngresado = "SELECT MAX(COD_ART) FROM ARTICULO";
+
+    $sqlinsertar = "INSERT INTO articuloplanta (CANTIDAD,NIV_RIE,COD_ART_PER,COD_PLA_PER)VALUES('$cantidad','$nivelR',(SELECT MAX(COD_ART) FROM ARTICULO),'$planta')";
     if ($mysqli -> query($sqlinsertar)===TRUE){
 
         echo json_encode ("ok se guardo correctamene");

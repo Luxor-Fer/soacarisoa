@@ -21,7 +21,7 @@
 ?>
    
 
-   <div style="padding-left: 35%; padding-right: 35%; padding-top: 10px;">
+   <div style="padding-left: 35%; padding-right: 35%;">
 <form class="row g-3" id="formu" method="POST" action="redireccion.php?action=eliminarArticulo">
   <div class="col-12">
     <label for="COD_ART" class="form-label">Buscar por nombre de Articulo: </label>
@@ -42,35 +42,35 @@
 </div>
 
 
-<div class="estiloHome" style="padding-left: 35%; padding-right: 35%; padding-top: 10px;">
+<div class="estiloHome" style="padding-left: 35%; padding-right: 35%; padding-top: 3px;">
 <form class="row g-3" id="formulario" method="POST" action="redireccion.php?action=eliminarArticulo">
 <div class="col-12">
     <label for="inputCodigo" class="form-label">Código Articulo: </label>
-    <input style="width: 450px;" type="text" class="form-control" id="COD_ART_PER" name="COD_ART_PER" >
+    <input style="width: 450px;" type="text" readonly class="form-control" id="COD_ART_PER" name="COD_ART_PER" >
   </div>
   <div class="col-12">
     <label for="inputNombre" class="form-label">Nombre: </label>
-    <input style="width: 450px;" type="text" class="form-control" id="NOM_ART" name="NOM_ART" requiered >
+    <input style="width: 450px;" type="text" readonly class="form-control" id="NOM_ART" name="NOM_ART" requiered >
   </div>
   <div class="col-12">
     <label for="inputColor" class="form-label">Color: </label>
-    <input style="width: 450px;" type="text" class="form-control" id="COL_ART" name="COL_ART"  requiered >
+    <input style="width: 450px;" type="text" readonly class="form-control" id="COL_ART" name="COL_ART"  requiered >
   </div>
   <div class="col-12">
     <label for="inputNivRies" class="form-label">Nivel de Riesgo:  </label>
-    <input style="width: 450px;" type="text" class="form-control" id="NIV_RIE" name="NIV_RIE" requiered >
+    <input style="width: 450px;" type="text" readonly class="form-control" id="NIV_RIE" name="NIV_RIE" requiered >
     </div>
   <div class="col-md-4">
     <label for="inputPeso" class="form-label">Peso: </label>
-    <input style="width: 140px;" type="text" class="form-control" id="PES_ART" name="PES_ART" requiered >
+    <input style="width: 140px;" type="text" readonly class="form-control" id="PES_ART" name="PES_ART" requiered >
   </div>
   <div class="col-md-4">
     <label for="inputCapacidad" class="form-label">Capacidad:  </label>
-    <input style="width: 140px;" type="number" min="1" class="form-control" id="CAP_ART" name="CAP_ART" requiered >
+    <input style="width: 140px;" type="number" readonly min="1" class="form-control" id="CAP_ART" name="CAP_ART" requiered >
   </div>
   <div class="col-md-4">
     <label for="inputCantidad" class="form-label">Cantidad: </label>
-    <input style="width: 135px;" type="number" min="1" class="form-control" id="CANTIDAD" name="CANTIDAD" requiered>
+    <input style="width: 135px;" type="number" min="1" readonly class="form-control" id="CANTIDAD" name="CANTIDAD" requiered>
      </div>
      <div class="col-md-6">
   <button type="submit" id="forEditar" name="forEditar" class="btn btn-primary">Eliminar Articulo Prro</button>

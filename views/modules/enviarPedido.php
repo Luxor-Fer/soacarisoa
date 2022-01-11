@@ -1,8 +1,10 @@
 <?php
-header('Access-Control-Allow-Origin: *');
-header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
-header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
-header("Allow: GET, POST, OPTIONS, PUT, DELETE");
+print_r($_POST['dacom']);
+echo '<br>';
+require_once "models/realizarPedido.php";
 
-echo $_POST['dacom'];
+foreach ($_POST['dacom'] as $arrayPedidosIndividual){
+    echo "_________ $arrayPedidosIndividual[0], $arrayPedidosIndividual[1]"."<br>";
+    agregarArticulosCab($arrayPedidosIndividual[0],$arrayPedidosIndividual[1]);
+}
 ?>

@@ -6,8 +6,7 @@ header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 
 include_once 'conexion.php';
 
-#$val = json_decode(json_encode($_SESSION['usuario']),true);
-#$codigo = $val[0]['COD_SUC'];
+
 $sqlSelect = "SELECT a.*,p.COD_PLA_PER, l.NOM_PLA FROM articulo a, articuloplanta p, planta l WHERE a.COD_ART = p.COD_ART_PER AND p.COD_PLA_PER=l.COD_PLA";
 $respuesta = $conn -> query ($sqlSelect);
 $result = array ();

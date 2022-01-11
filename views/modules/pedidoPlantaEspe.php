@@ -82,29 +82,12 @@
     function enviarDatos(){
         let url ="redireccion.php?action=enviarPedido";
         var envios = {"pedidos": pedidos};
-        
-  
-        envio(envios,url);
-        
-    }
-    function envio(dato , direccion){
-            $.ajax({
-                data: dato,
-                url: direccion,
-                type: "post",
-                success: function(response){
-                
-
-                     $.post('redireccion.php?action=enviarPedido', {
-              "dacom": dato,
+        $.post('redireccion.php?action=enviarPedido', {
+              "dacom": pedidos,
               
             },function(data) {
-                window.location.href = "redireccion.php?action=enviarPedido";
-          });
-                },
-                error: function (error){
-                    console.log(error);
-                }
-            });
+                //console.log("aqui toy",data);
+                document.write(data);
+          });        
     }
 </script>
