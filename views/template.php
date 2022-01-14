@@ -44,8 +44,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href="redireccion.php?action=añadirP">Añadir Pedido</a></li>
-            <li><a class="dropdown-item" href="redireccion.php?action=editarpedido">Editar Pedido</a></li>
-            <li><a class="dropdown-item" href="redireccion.php?action=eliminarpedido">Eliminar Pedido</a></li>
+            <li><a class="dropdown-item" href="redireccion.php?action=mostrarPedidoSuc">Mostrar Pedidos</a></li>
           </ul>
         </li>
       </ul>

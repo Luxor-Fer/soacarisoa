@@ -6,7 +6,7 @@ class EnlacesPaginas {
             $enlacesModel == "añadircliente" ||
             $enlacesModel == "editarcliente" ||
             $enlacesModel == "eliminarcliente" ||
-            $enlacesModel == "editarpedido" ||
+            $enlacesModel == "mostrarPedidoSuc" ||
             $enlacesModel == "datos" ||
             $enlacesModel == "pedidoPlantaEspe" ||
             $enlacesModel == "enviarPedido" ||

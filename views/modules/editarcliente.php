@@ -1,6 +1,6 @@
 <?php
     if (isset($_POST['forEditar'])){
-        include_once "models/servicioEditarArticulo.php";
+        include_once "models/servicioEditarCliente.php";
 ?>
     <script>
         alert("Se ha editado correctamente");
