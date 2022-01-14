@@ -24,6 +24,7 @@
   <tbody>
       <?php
       for ($i=0; $i <sizeof($val) ; $i++) { 
+        if ($val[$i]['CANTIDAD'] > 0){
       ?>
     <tr>
         
@@ -37,7 +38,8 @@
             <input type="button" class="btn btn-primary" value="Agregar" onclick="agregarCarrito(<?php echo $val[$i]['COD_ART']; ?>,'<?php echo $val[$i]['NOM_ART'];?>')"></td>
 
     </tr>
-    <?php   
+    <?php
+        }   
     }
     ?>
 </tbody>
@@ -63,10 +65,17 @@
 
 <script>
     let pedidos=[];
+    let incrementar = false;
+    let sop;
     function agregarCarrito (codArti,i){
+        pedidos.forEach(function(valor,index){
+          if (valor[0]==codArti){
+            incrementar = true;
+          }
+        })
+      if (!incrementar){
         pedidos.push([codArti,document.getElementById(codArti).value]);
         //alert(pedidos[0]);
-
         let row_2 = document.createElement('tr');
         let row_2_data_1 = document.createElement('td');
         row_2_data_1.innerHTML = codArti;
@@ -77,7 +86,24 @@
         row_2.appendChild(row_2_data_1);
         row_2.appendChild(row_2_data_2);
         row_2.appendChild(row_2_data_3);
+
+        let btnDestruir = document.createElement('button');
+        btnDestruir.innerHTML = "Eliminar";
+        btnDestruir.onclick = function (){
+          pedidos.forEach(function(valor,index){
+          if (valor[0]==codArti){
+            sop = index;
+          }
+          })
+          pedidos.splice(sop,1);
+          row_2.remove();
+        }
+        row_2.appendChild(btnDestruir);
+        
         document.getElementById("tabla").appendChild(row_2);
+      }else{
+        incrementar = false;
+      }
     }
     function enviarDatos(){
         let url ="redireccion.php?action=enviarPedido";
