@@ -22,9 +22,32 @@ if ($conn -> query($sqlInsertCabecera)===TRUE){
 function agregarArticulosCab($codArti, $canArti){
     #$sqlArticuloIngresado = "SELECT MAX(COD_ART) FROM ARTICULO";
     include "conexion.php";
+
+    $sqlSelect = "SELECT CANTIDAD FROM articuloplanta WHERE COD_ART_PER = '$codArti'";
+    $respuesta = $conn->query($sqlSelect);
+
+
+    if ( $respuesta->num_rows > 0 ){
+        
+    while($res = $respuesta->fetch_assoc())
+    $cantidad= $res['CANTIDAD'];
+       
+    }else{
+        $cantidad = "No hay cantidad";
+    }
+
     $sqlinsertar = "INSERT INTO detalle (COD_CAB_PER,COD_ART_PER,CANTIDAD)VALUES((SELECT MAX(COD_CAB) FROM cabezera),'$codArti','$canArti')";
     if ($mysqli -> query($sqlinsertar)===TRUE){
-
+ 
+    $cantidad =$cantidad - $canArti;
+    echo   $cantidad;
+       
+    $update = "UPDATE articuloplanta SET CANTIDAD='$cantidad' WHERE COD_ART_PER='$codArti'";
+    if ($mysqli -> query($update)===TRUE){
+        
+    }else{
+    echo json_encode ("error ".$update.$mysqli->error);
+    }
         echo json_encode ("ok se guardo correctamene producto");
     }else{
         echo json_encode ("error ".$sqlinsertar.$mysqli->error);
