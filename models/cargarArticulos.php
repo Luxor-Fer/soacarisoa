@@ -7,7 +7,7 @@ header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 include_once 'conexion.php';
 
 
-$sqlSelect = "SELECT a.*,p.COD_PLA_PER, l.NOM_PLA FROM articulo a, articuloplanta p, planta l WHERE a.COD_ART = p.COD_ART_PER AND p.COD_PLA_PER=l.COD_PLA";
+$sqlSelect = "SELECT a.*,p.*, l.NOM_PLA FROM articulo a, articuloplanta p, planta l WHERE a.COD_ART = p.COD_ART_PER AND p.COD_PLA_PER=l.COD_PLA";
 $respuesta = $conn -> query ($sqlSelect);
 $result = array ();
 

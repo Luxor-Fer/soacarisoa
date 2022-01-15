@@ -12,8 +12,15 @@ $color = $_POST['COL_ART'];
 $peso = $_POST['PES_ART'];
 $capacidad = $_POST['CAP_ART'];
 $cantidad = $_POST['CANTIDAD'];
-$nivelR= $_POST['NIV_RIE'];
 $planta = $_POST['COD_PLA_PER'];
+
+if( $cantidad <= 4){
+    $nivelR = "Alto";
+}elseif (7 >= $cantidad and $cantidad  >= 5){
+    $nivelR = "Medio";
+}else{
+    $nivelR = "Bajo";
+}
 
 $sqlinsertarArt = "INSERT INTO articulo (NOM_ART,COL_ART,PES_ART,CAP_ART)VALUES('$nombre','$color','$peso','$capacidad')";
 

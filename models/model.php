@@ -25,15 +25,14 @@ class EnlacesPaginas {
     }
 
     public static function enlacesPaginasModelPlanta ($enlacesModel){
-        if ($enlacesModel == "sucursalQuito" || 
+        if ($enlacesModel == "sucursalLatacunga" || 
             $enlacesModel == "sucursalAmbato" ||
-            $enlacesModel == "sucursalLoja" ||
-            $enlacesModel == "sucursalGuayaquil" ||
-            $enlacesModel == "enviarPedido" ||
-            $enlacesModel == "cancelarPedido" ||
+            $enlacesModel == "sucursalSalcedo" ||
+            $enlacesModel == "listarPedidos" ||
             $enlacesModel == "añadirArticulo" ||
             $enlacesModel == "editarArticulo"||
             $enlacesModel == "datos"||
+            $enlacesModel == "listarArticulos"||
             $enlacesModel == "eliminarArticulo")
             {
                 $module = "views/modulesPlanta/".$enlacesModel.".php";

@@ -43,7 +43,7 @@
 <form class="row g-3" id="formulario" method="POST" action="redireccion.php?action=editarcliente">
   <div class="col-12">
     <label for="CED_CLI_PER" class="form-label">Cedula: </label>
-    <input style="width: 450px;" type="text" class="form-control" id="CED_CLI_PER" name="CED_CLI_PER" >
+    <input style="width: 450px;" readonly type="text" class="form-control" id="CED_CLI_PER" name="CED_CLI_PER" >
   </div>
   <div class="col-12">
     <label for="NOM_CLI" class="form-label">Nombre: </label>

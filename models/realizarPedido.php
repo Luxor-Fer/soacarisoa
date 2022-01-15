@@ -38,11 +38,18 @@ function agregarArticulosCab($codArti, $canArti){
 
     $sqlinsertar = "INSERT INTO detalle (COD_CAB_PER,COD_ART_PER,CANTIDAD)VALUES((SELECT MAX(COD_CAB) FROM cabezera),'$codArti','$canArti')";
     if ($mysqli -> query($sqlinsertar)===TRUE){
- 
+        
     $cantidad =$cantidad - $canArti;
+    if( $cantidad <= 4){
+        $nivRiesgo = "Alto";
+    }elseif (7 >= $cantidad and $cantidad  >= 5){
+        $nivRiesgo = "Medio";
+    }else{
+        $nivRiesgo = "Bajo";
+    }
     echo   $cantidad;
        
-    $update = "UPDATE articuloplanta SET CANTIDAD='$cantidad' WHERE COD_ART_PER='$codArti'";
+    $update = "UPDATE articuloplanta SET CANTIDAD='$cantidad', NIV_RIE = '$nivRiesgo' WHERE COD_ART_PER='$codArti'";
     if ($mysqli -> query($update)===TRUE){
         
     }else{

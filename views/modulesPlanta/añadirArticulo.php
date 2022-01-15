@@ -23,14 +23,10 @@
     <label for="inputColor" class="form-label">Color: </label>
     <input style="width: 450px;" type="text" class="form-control" id="inputColor" name="COL_ART"  requiered >
   </div>
-  <div class="col-12">
-    <label for="inputNivRies" class="form-label">Nivel de Riesgo:  </label>
-    <input style="width: 450px;" type="text" class="form-control" id="inputNivRies" name="NIV_RIE" requiered >
-    <input type="hidden" name="COD_PLA_PER" value="<?php echo $val[0]['COD_PLA'] ?>" >
-  </div>
   <div class="col-md-4">
     <label for="inputPeso" class="form-label">Peso: </label>
     <input style="width: 140px;" type="text" class="form-control" id="inputPeso" name="PES_ART" requiered >
+    <input type="hidden" name="COD_PLA_PER" value="<?php echo $val[0]['COD_PLA'] ?>" >
   </div>
   <div class="col-md-4">
     <label for="inputCapacidad" class="form-label">Capacidad:  </label>
@@ -41,7 +37,7 @@
     <input style="width: 135px;" type="number" min="1" class="form-control" id="inputCantidad" name="CANTIDAD" requiered>
      </div>
     <div class="col-md-6" style="padding-top: 20px;">
-  <button type="submit" id="guardar" name="guardar" class="btn btn-primary" onsubmit="guardar()">Añadir Articulo Prro</button>
+  <button type="submit" id="guardar" name="guardar" class="btn btn-primary" >Añadir Articulo Prro</button>
   </div>
 </form>
 </div>

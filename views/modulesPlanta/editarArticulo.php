@@ -7,8 +7,11 @@
     </script>
     
 <?php
-
-    }
+}
+$plant = json_decode(json_encode($_SESSION['usuario']),true);
+#print_r( $_SESSION['usuario']) ;
+#echo "<br>";
+#echo $plant[0]['COD_PLA'];
     include "models/cargarArticulos.php";
     if ( $result != null ){
         $objt = json_decode($resultJSON);
@@ -26,9 +29,9 @@
     <input style="width: 450px;" class="form-control" id="COD_ART" name="COD_ART" list="opcionesNombre">
         <datalist id="opcionesNombre">
         <?php for ($i=0; $i <sizeof($val) ; $i++) { 
-           
+           if ($plant[0]['COD_PLA']== $val[$i]['COD_PLA_PER']){
          ?> <option value="<?php echo $val[$i]['COD_ART']; ?>"><?php echo $val[$i]['NOM_ART'].' - '.$val[$i]['COL_ART']; ?></option>
-           <?php } ?>
+           <?php }} ?>
 
         </datalist>
     </div>
@@ -55,7 +58,7 @@
   </div>
   <div class="col-12">
     <label for="inputNivRies" class="form-label">Nivel de Riesgo:  </label>
-    <input style="width: 450px;" type="text" class="form-control" id="NIV_RIE" name="NIV_RIE" requiered >
+    <input style="width: 450px;" readonly type="text" class="form-control" id="NIV_RIE" name="NIV_RIE" requiered >
     </div>
   <div class="col-md-4">
     <label for="inputPeso" class="form-label">Peso: </label>
