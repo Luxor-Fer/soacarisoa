@@ -44,7 +44,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href="redireccion.php?action=añadirP">Añadir Pedido</a></li>
-            <li><a class="dropdown-item" href="redireccion.php?action=mostrarPedidoSuc">Mostrar Pedidos</a></li>
+            <li><a class="dropdown-item" href="redireccion.php?action=mostrarPedidoSuc&suc=<?php echo json_decode(json_encode($_SESSION['usuario']),true)[0]['COD_SUC'];?>">Mostrar Pedidos</a></li>
           </ul>
         </li>
       </ul>

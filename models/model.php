@@ -18,6 +18,12 @@ class EnlacesPaginas {
         {
             $module = "views/modules/home.php";
         }
+        else if ($enlacesModel == "mostrarPedidoSuc&suc=1"||
+                $enlacesModel == "mostrarPedidoSuc&suc=2"||
+                $enlacesModel == "mostrarPedidoSuc&suc=3")
+        {
+            $module = "views/modules/mostrarPedidoSuc.php";
+        }
         else
             $module = "views/modules/home.php";
 

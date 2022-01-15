@@ -1,5 +1,6 @@
 <?php
-    include "models/cargarPedidosSucursal.php";
+
+    include "models/cargarPedidoSucursal2.php";
     if ( $plantas != null ){
         $objt = json_decode($plantasResult);
         $val = json_decode(json_encode($objt),true);
