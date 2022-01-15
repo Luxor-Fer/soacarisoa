@@ -13,7 +13,7 @@ $sqlSelect = "SELECT c.FEC_SUC, c.COD_CAB, s.NOM_SUC , d.COD_ART_PER, d.CANTIDAD
 FROM cabezera c , detalle d, articulo a, articuloplanta ap, sucursal s
 WHERE C.COD_CAB=D.COD_CAB_PER AND ap.COD_PLA_PER='$codigo' AND s.COD_SUC=c.COD_SUC_PER AND AP.COD_ART_PER=A.COD_ART AND D.COD_ART_PER=A.COD_ART ";
 
-$respuesta = $conn -> query ($sqlSelect);
+$respuesta = $mysqli -> query ($sqlSelect);
 $plantas = array ();
 
 
