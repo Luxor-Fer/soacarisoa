@@ -5,5 +5,5 @@ foreach ($_POST['dacom'] as $arrayPedidosIndividual){
     agregarArticulosCab($arrayPedidosIndividual[0],$arrayPedidosIndividual[1]);
 }
 $direccion=json_decode(json_encode($_SESSION['usuario']),true)[0]['COD_SUC'];
-header('Location: '."redireccion.php?action=mostrarPedidoSuc&suc=$direccion);
+header('Location: '."redireccion.php?action=mostrarPedidoSuc&suc=$direccion");
 ?>
