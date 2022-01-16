@@ -36,7 +36,7 @@
     </div>
   
   <div class="col-md-6" >
-  <button type="submit" id="btnEdit" name="btnEdit" class="btn btn-primary">Buscar Prro</button>
+  <button type="submit" id="btnEdit" name="btnEdit" class="btn btn-primary">Buscar Articulo</button>
   </div>
 </form>
 </div>
@@ -73,7 +73,7 @@
     <input style="width: 135px;" type="number" min="1" readonly class="form-control" id="CANTIDAD" name="CANTIDAD" requiered>
      </div>
      <div class="col-md-6">
-  <button type="submit" id="forEditar" name="forEditar" class="btn btn-primary">Eliminar Articulo Prro</button>
+  <button type="submit" id="forEditar" name="forEditar" class="btn btn-primary">Eliminar Articulo</button>
   </div>
 </form>
 </div>

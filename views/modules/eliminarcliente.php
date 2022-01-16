@@ -35,7 +35,7 @@
     </div>
   
   <div class="col-md-6" >
-  <button type="submit" id="btnEdit" name="btnEdit" class="btn btn-primary">Buscar Prro</button>
+  <button type="submit" id="btnEdit" name="btnEdit" class="btn btn-primary">Buscar Cliente</button>
   </div>
 </form>
 </div>

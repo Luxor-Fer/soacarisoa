@@ -25,14 +25,14 @@ if( $cantidad <= 4){
 $sqlinsertarArt = "INSERT INTO articulo (NOM_ART,COL_ART,PES_ART,CAP_ART)VALUES('$nombre','$color','$peso','$capacidad')";
 
 if ($mysqli -> query($sqlinsertarArt)===TRUE){
-    echo json_encode ("ok se guardo correctamene");
+    #echo json_encode ("ok se guardo correctamene");
 
     #$sqlArticuloIngresado = "SELECT MAX(COD_ART) FROM ARTICULO";
 
     $sqlinsertar = "INSERT INTO articuloplanta (CANTIDAD,NIV_RIE,COD_ART_PER,COD_PLA_PER)VALUES('$cantidad','$nivelR',(SELECT MAX(COD_ART) FROM ARTICULO),'$planta')";
     if ($mysqli -> query($sqlinsertar)===TRUE){
 
-        echo json_encode ("ok se guardo correctamene");
+       # echo json_encode ("ok se guardo correctamene");
     }else{
         echo json_encode ("error ".$sqlinsertar.$mysqli->error);
     }

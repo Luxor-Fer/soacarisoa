@@ -4,6 +4,6 @@ require_once "models/realizarPedido.php";
 foreach ($_POST['dacom'] as $arrayPedidosIndividual){
     agregarArticulosCab($arrayPedidosIndividual[0],$arrayPedidosIndividual[1]);
 }
-
-header('Location: '."redireccion.php?action=mostrarPedidoSuc");
+$direccion=json_decode(json_encode($_SESSION['usuario']),true)[0]['COD_SUC'];
+header('Location: '."redireccion.php?action=mostrarPedidoSuc&suc=$direccion);
 ?>

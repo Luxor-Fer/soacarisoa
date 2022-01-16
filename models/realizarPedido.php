@@ -13,7 +13,7 @@ $sucPer = $val[0]['COD_SUC'];
 $sqlInsertCabecera = "INSERT INTO cabezera (COD_SUC_PER,FEC_SUC)VALUES('$sucPer',current_timestamp())";
 
 if ($conn -> query($sqlInsertCabecera)===TRUE){
-    echo json_encode ("ok se guardo correctamene cabezera");
+    #echo json_encode ("ok se guardo correctamene cabezera");
 
 }else{
     echo json_encode ("error ".$sqlInsertCabecera.$conn->error);
@@ -47,7 +47,7 @@ function agregarArticulosCab($codArti, $canArti){
     }else{
         $nivRiesgo = "Bajo";
     }
-    echo   $cantidad;
+    #echo   $cantidad;
        
     $update = "UPDATE articuloplanta SET CANTIDAD='$cantidad', NIV_RIE = '$nivRiesgo' WHERE COD_ART_PER='$codArti'";
     if ($mysqli -> query($update)===TRUE){
@@ -55,7 +55,7 @@ function agregarArticulosCab($codArti, $canArti){
     }else{
     echo json_encode ("error ".$update.$mysqli->error);
     }
-        echo json_encode ("ok se guardo correctamene producto");
+        #echo json_encode ("ok se guardo correctamene producto");
     }else{
         echo json_encode ("error ".$sqlinsertar.$mysqli->error);
     }

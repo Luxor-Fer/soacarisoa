@@ -21,7 +21,7 @@
 <div style="padding-left: 35%; padding-right: 35%; padding-top: 10px;">
 <form class="row g-3" id="formu" method="POST" action="redireccion.php?action=editarcliente">
   <div class="col-12">
-    <label for="CED_CLI" class="form-label">Buscar por nombde del Cliente: </label>
+    <label for="CED_CLI" class="form-label">Buscar por nombre del Cliente: </label>
     <input style="width: 450px;" class="form-control" id="CED_CLI" name="CED_CLI" list="opcionesNombre">
         <datalist id="opcionesNombre">
         <?php for ($i=0; $i <sizeof($val) ; $i++) { 
@@ -33,7 +33,7 @@
     </div>
   
   <div class="col-md-6" >
-  <button type="submit" id="btnEdit" name="btnEdit" class="btn btn-primary">Buscar Prro</button>
+  <button type="submit" id="btnEdit" name="btnEdit" class="btn btn-primary">Buscar Cliente</button>
   </div>
 </form>
 </div>
@@ -66,7 +66,7 @@
     <input style="width: 135px;" type="number" class="form-control" id="LIM_CRE_CLI" name="LIM_CRE_CLI" requiered>
   </div>  
   <div class="col-md-6">
-  <button type="submit" id="forEditar" name="forEditar" class="btn btn-primary">Actualizar Cliente Prro</button>
+  <button type="submit" id="forEditar" name="forEditar" class="btn btn-primary">Actualizar Cliente</button>
   </div>
 </form>
 </div>

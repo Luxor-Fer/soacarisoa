@@ -27,10 +27,10 @@ $val = json_decode(json_encode($_SESSION['usuario']),true);
   </div>
   
   <div class="col-md-10">
-  <button type="button" id="btneditar" class="btn btn-primary" >Edita Prro</button>
+  <button type="button" id="btneditar" class="btn btn-primary" >Editar Sucursal</button>
   </div>
   <div class="col-md-2">
-  <button type="submit" id="guardar" name="guardar" class="btn btn-primary" disabled>Guardar Cambios Prro</button>
+  <button type="submit" id="guardar" name="guardar" class="btn btn-primary" disabled>Guardar Cambios</button>
   </div>
 </form>
 </div>

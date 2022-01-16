@@ -21,7 +21,7 @@ if ( $respuesta -> num_rows > 0 ){
 }
 
 $plantasResult = json_encode($plantas);
-echo $plantasResult;
+#echo $plantasResult;
 
 
 ?>
